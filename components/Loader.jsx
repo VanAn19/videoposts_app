@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const Welcome = () => {
+const Loader = () => {
   return (
     <View>
-      <Text>Welcome</Text>
+      <Text>Loader</Text>
     </View>
   )
 }
 
-export default Welcome
+export default Loader

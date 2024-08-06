@@ -1,6 +1,5 @@
-import { Slot, SplashScreen, Stack } from 'expo-router'
+import { SplashScreen, Stack } from 'expo-router'
 import React, { useEffect } from 'react'
-import { View, Text } from 'react-native'
 import { useFonts } from 'expo-font'
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -24,6 +23,8 @@ const RootLayout = () => {
     if (fontsLoaded) SplashScreen.hideAsync();
   }, [fontsLoaded, error])
 
+  if (!fontsLoaded) return null;
+  
   if (!fontsLoaded && !error) return null;
 
   return (
