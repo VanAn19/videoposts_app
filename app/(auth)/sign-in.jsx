@@ -1,9 +1,9 @@
-import { View, Text, ScrollView, Image } from 'react-native'
+import { View, Text, ScrollView, Image, Alert } from 'react-native'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { images } from '@/constants'
 import { CustomButton, FormField } from '@/components'
-import { Link } from 'expo-router'
+import { Link, router } from 'expo-router'
 import { getCurrentUser, signIn } from "../../lib/appwrite";
 import { useGlobalContext } from "../../context/GlobalProvider";
 
@@ -51,6 +51,7 @@ const SignIn = () => {
             value={form.email}
             handleChangeText={(e) => setForm({ ...form, email: e })}
             otherStyles='mt-7'
+            keyboardType="email-address"
           />
           <FormField 
             title="Password"
